@@ -31,7 +31,7 @@
 20    water |shore@0,240              (noburn)(description=#1)
 # BEGIN TREES #
 21    dirt |forest_all@0,0              (description=#2)
-22    terrain@0,352                     (description=#2)
+22    dirt |forest_all@0,16             (description=#2)
 23    terrain@0,368                     (description=#2)
 24    terrain@0,384                     (description=#2)
 25    terrain@0,400                     (description=#2)
@@ -39,7 +39,7 @@
 27    dirt |forest_all@0,96             (description=#2)
 28    terrain@0,448                     (description=#2)
 29    dirt |forest_all@16,0             (description=#2)
-30    terrain@0,480                     (description=#2)
+30    dirt |forest_all@16,16            (description=#2)
 31    terrain@0,496                     (description=#2)
 32    terrain@0,512                     (description=#2)
 33    terrain@0,528                     (description=#2)

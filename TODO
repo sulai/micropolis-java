@@ -29,3 +29,13 @@ Graphics-
 
 Draw-Bridge-
  *If there's traffic on a bridge, the draw bridge does not open correctly.
+
+Animation-
+ *New syntax in tiles.rc for specifying animation
+    # light traffic
+    82 (66) [[ traffic/0-0 T=10; traffic/0-1 T=10; traffic/0-2 T=10; traffic/0-3 T=10 ]]
+ *Or, define an .ani file (that takes precedence over .svg and .png as image source) with a format like
+    T=10 traffic/0-0
+    T=10 traffic/0-1
+    T=10 traffic/0-2
+    T=10 traffic/0-3

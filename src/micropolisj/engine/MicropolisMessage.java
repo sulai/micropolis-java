@@ -65,6 +65,10 @@ public enum MicropolisMessage
 	/** Whether the message should be displayed in the notification pane. */
 	public boolean useNotificationPane = false;
 
+	/** Whether to pause the game and show the message in a popup window
+	 * that must be acknowledged. */
+	public boolean usePopupNotification = false;
+
 	static
 	{
 	// not location-specific

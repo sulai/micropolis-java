@@ -52,6 +52,7 @@ public class MainWindow extends JFrame
 	boolean dirty2 = false;  //indicates if simulator took a step since last save
 	long lastSavedTime = 0;  //real-time clock of when file was last saved
 	boolean autoBudgetPending;
+	boolean pendingPopupMessage;
 
 	static ImageIcon appIcon;
 	static {
@@ -1366,6 +1367,11 @@ public class MainWindow extends JFrame
 					showAutoBudget();
 					return;
 				}
+				if (pendingPopupMessage)
+				{
+					showPopupMessage();
+					return;
+				}
 			}
 			updateDateLabel();
 			dirty2 = true;
@@ -1635,6 +1641,11 @@ public class MainWindow extends JFrame
 		else {
 			autoBudgetPending = true;
 		}
+	}
+
+	private void showPopupMessage()
+	{
+		assert pendingPopupMessage;
 	}
 
 	private void showBudgetWindow(boolean isEndOfYear)

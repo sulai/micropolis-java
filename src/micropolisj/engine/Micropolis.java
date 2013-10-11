@@ -446,6 +446,22 @@ public class Micropolis
 		}
 	}
 
+	public int getTileExtraInt(int xpos, int ypos, String key, int defaultValue)
+	{
+		return getTileExtraInt(new CityLocation(xpos, ypos), key, defaultValue);
+	}
+
+	public int getTileExtraInt(CityLocation loc, String key, int defaultValue)
+	{
+		String s = getTileExtra(loc, key);
+		if (s != null) {
+			return Integer.parseInt(s);
+		}
+		else {
+			return defaultValue;
+		}
+	}
+
 	public void setTile(int xpos, int ypos, char newTile)
 	{
 		if (map[ypos][xpos] != newTile)

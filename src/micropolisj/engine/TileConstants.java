@@ -305,6 +305,9 @@ public class TileConstants
 		int tmp = neutralizeRoad(tile & LOMASK);
 		switch (tmp)
 		{
+		case RIVER:
+		case REDGE:
+		case CHANNEL:
 		case HBRIDGE:
 		case VBRIDGE:
 		case BRWV:

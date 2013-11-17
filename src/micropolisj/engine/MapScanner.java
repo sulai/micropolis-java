@@ -432,7 +432,7 @@ class MapScanner extends TileBehavior
 		city.comPop += tpop;
 
 		int trafficModifier;
-		if (tpop > PRNG.nextInt(6))
+		if (isTrafficCycle())
 		{
 			int earnings = makeTraffic(ZoneType.COMMERCIAL, tpop*8);
 			trafficModifier = earnings * 60;
@@ -483,7 +483,7 @@ class MapScanner extends TileBehavior
 		city.indPop += tpop;
 
 		int trafficModifier;
-		if (tpop > PRNG.nextInt(6))
+		if (isTrafficCycle())
 		{
 			int earnings = makeTraffic(ZoneType.INDUSTRIAL, tpop*8);
 			trafficModifier = earnings * 60;
@@ -543,7 +543,7 @@ class MapScanner extends TileBehavior
 		city.resPop += tpop;
 
 		int trafficModifier;
-		if (tpop > PRNG.nextInt(36))
+		if (isTrafficCycle())
 		{
 			int earnings = makeTraffic(ZoneType.RESIDENTIAL, tpop);
 			trafficModifier = earnings * 60;
@@ -1183,7 +1183,8 @@ class MapScanner extends TileBehavior
 		return maxCost;
 	}
 
-	static final int JOB_SLOT_COUNT = 4;
+	static final int JOB_SLOT_COUNT = 3;
+	static final int TRAFFIC_CYCLE = 11;
 
 	void setJob(TrafficType connType, int slot, int count, CityLocation dest, int [] pathTaken)
 	{
@@ -1199,5 +1200,10 @@ class MapScanner extends TileBehavior
 
 			city.addConnection(conn);
 		}
+	}
+
+	boolean isTrafficCycle()
+	{
+		return (city.cityTime + xpos + ypos) % TRAFFIC_CYCLE == 0;
 	}
 }
